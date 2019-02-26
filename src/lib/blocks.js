@@ -40,6 +40,13 @@ export default function (vm) {
                     }
                 }
             ],
+            "message1": ScratchBlocks.Msg.START_PROCEDURES_DEFINITION,
+            "args1": [
+	        {
+                    type: "input_value",
+                    name: "NAME"
+	        }
+            ],
             colour: colors.primary,
             colourSecondary: colors.secondary,
             colourTertiary: colors.tertiary,

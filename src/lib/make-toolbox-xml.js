@@ -345,15 +345,43 @@ const sound = function (isStage, targetId, soundName) {
 const events = function (isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
-        <block type="event_whenflagclicked"/>
+        <block type="event_whenflagclicked">
+            <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT"></field>
+                </shadow>
+            </value>
+        </block>
         <block type="event_whenkeypressed">
+            <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT"></field>
+                </shadow>
+            </value>
         </block>
         ${isStage ? `
-            <block type="event_whenstageclicked"/>
+            <block type="event_whenstageclicked">
+                <value name="NAME">
+                     <shadow type="text">
+                         <field name="TEXT"></field>
+                     </shadow>
+                </value>
+            </block>
         ` : `
-            <block type="event_whenthisspriteclicked"/>
+            <block type="event_whenthisspriteclicked">
+                <value name="NAME">
+                     <shadow type="text">
+                         <field name="TEXT"></field>
+                     </shadow>
+                </value>
+            </block>
         `}
         <block type="event_whenbackdropswitchesto">
+            <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT"></field>
+                </shadow>
+            </value>   
         </block>
         ${blockSeparator}
         <block type="event_whengreaterthan">
@@ -362,6 +390,11 @@ const events = function (isStage) {
                     <field name="NUM">10</field>
                 </shadow>
             </value>
+            <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT"></field>
+                </shadow>
+            </value> 
         </block>
         ${blockSeparator}
         <block type="event_whenbroadcastreceived">
@@ -369,6 +402,11 @@ const events = function (isStage) {
         <block type="event_broadcast">
             <value name="BROADCAST_INPUT">
                 <shadow type="event_broadcast_menu"></shadow>
+            </value>
+            <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT"></field>
+                </shadow>
             </value>
         </block>
         <block type="event_broadcastandwait">
@@ -415,7 +453,13 @@ const control = function (isStage) {
                 </value>
             </block>
         ` : `
-            <block type="control_start_as_clone"/>
+            <block type="control_start_as_clone">
+                <value name="NAME">
+                    <shadow type="text">
+                       <field name="TEXT"></field>
+                    </shadow>
+                </value>
+            </block>
             <block type="control_create_clone_of">
                 <value name="CLONE_OPTION">
                     <shadow type="control_create_clone_of_menu"/>
