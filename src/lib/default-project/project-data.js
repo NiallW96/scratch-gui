@@ -8,7 +8,7 @@ let messages = defineMessages({
         id: 'gui.defaultProject.meow'
     },
     variable: {
-        defaultMessage: 'my variable',
+        defaultMessage: 'stage.my_variable',
         description: 'Name for the default variable',
         id: 'gui.defaultProject.variable'
     }
@@ -32,7 +32,7 @@ const projectData = translateFunction => {
                 isStage: true,
                 name: 'Stage',
                 variables: {
-                    '`jEk@4|i[#Fk?(8x)AV.-my variable': [
+                    '`jEk@4|i[#Fk?(8x)AV.-stage.my_variable': [
                         translator(messages.variable),
                         0
                     ]
