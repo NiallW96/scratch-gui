@@ -343,19 +343,20 @@ const sound = function (isStage, targetId, soundName) {
 };
 
 const events = function (isStage) {
+    const script_name = ScratchBlocks.ScratchMsgs.translate('EVENT_DEFAULT_NAME', 'script_name');
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked">
             <value name="NAME">
                 <shadow type="text">
-                     <field name="TEXT"></field>
+                     <field name="TEXT">${script_name}</field>
                 </shadow>
             </value>
         </block>
         <block type="event_whenkeypressed">
             <value name="NAME">
                 <shadow type="text">
-                     <field name="TEXT"></field>
+                     <field name="TEXT">${script_name}</field>
                 </shadow>
             </value>
         </block>
@@ -363,7 +364,7 @@ const events = function (isStage) {
             <block type="event_whenstageclicked">
                 <value name="NAME">
                      <shadow type="text">
-                         <field name="TEXT"></field>
+                         <field name="TEXT">${script_name}</field>
                      </shadow>
                 </value>
             </block>
@@ -371,7 +372,7 @@ const events = function (isStage) {
             <block type="event_whenthisspriteclicked">
                 <value name="NAME">
                      <shadow type="text">
-                         <field name="TEXT"></field>
+                         <field name="TEXT">${script_name}</field>
                      </shadow>
                 </value>
             </block>
@@ -379,7 +380,7 @@ const events = function (isStage) {
         <block type="event_whenbackdropswitchesto">
             <value name="NAME">
                 <shadow type="text">
-                     <field name="TEXT"></field>
+                     <field name="TEXT">${script_name}</field>
                 </shadow>
             </value>   
         </block>
@@ -392,21 +393,21 @@ const events = function (isStage) {
             </value>
             <value name="NAME">
                 <shadow type="text">
-                     <field name="TEXT"></field>
+                     <field name="TEXT">${script_name}</field>
                 </shadow>
             </value> 
         </block>
         ${blockSeparator}
         <block type="event_whenbroadcastreceived">
+	    <value name="NAME">
+                <shadow type="text">
+                     <field name="TEXT">${script_name}</field>
+                </shadow>
+            </value>
         </block>
         <block type="event_broadcast">
             <value name="BROADCAST_INPUT">
                 <shadow type="event_broadcast_menu"></shadow>
-            </value>
-            <value name="NAME">
-                <shadow type="text">
-                     <field name="TEXT"></field>
-                </shadow>
             </value>
         </block>
         <block type="event_broadcastandwait">
@@ -657,7 +658,7 @@ const operators = function () {
         <block type="operator_join">
             <value name="STRING1">
                 <shadow type="text">
-                    <field name="TEXT">${apple} </field>
+                    <field name="TEXT">${apple}</field>
                 </shadow>
             </value>
             <value name="STRING2">
